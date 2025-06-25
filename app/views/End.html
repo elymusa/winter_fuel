@@ -1,0 +1,28 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Content page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent
+%} {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" })
+}} {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">You are eligible for payment!</h1>
+
+    <p>
+        The Winter Fuel Payment for 2025 will be paid directly into your account between November and December 2025. </p>
+
+        <p>
+            You can opt out before 15 September 2025.<br><br>
+            You might prefer to receive the payment rather than opting out, in case you need help with your bills during the colder months. If your income is over £35,000 by the end of the financial year, the payment can be recovered through the tax system.
+    </p>
+</div>
+    <p>
+      Read more
+      <a
+        href="https://www.ageuk.org.uk/information-advice/money-legal/benefits-entitlements/winter-fuel-payment/#:~:text=Winter%20Fuel%20Payment%20is%20an%20annual%20payment%20for%20households%20that,costs%20over%20the%20winter%20months."
+        >about this topic</a
+      >.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

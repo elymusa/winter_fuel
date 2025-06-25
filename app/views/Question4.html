@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent
+%} {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" })
+}} {% endblock %} {% block content %}
+<form class="form" action="/End" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Question Four</h1>
+
+   
+      <p>
+       
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you earn over £35,000 of taxable (gross) income per year?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="wage" name="wage" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="wage">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="wage-2" name="wage-2" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="wage-2">
+                  No
+                </label>
+            
+            </div>
+          </fieldset>
+        </div>
+      </p>
+
+      {{ govukButton({ text: "Continue" }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

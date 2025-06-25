@@ -1,0 +1,24 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Content page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent
+%} {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" })
+}} {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Unfortunately you do not meet the criteria for winter fuel payments
+    </h1>
+
+    <p>You have to be of pensionable age</p>
+
+    <p>
+      Read more
+      <a
+        href="https://www.ageuk.org.uk/information-advice/money-legal/benefits-entitlements/winter-fuel-payment/#:~:text=Winter%20Fuel%20Payment%20is%20an%20annual%20payment%20for%20households%20that,costs%20over%20the%20winter%20months."
+        >about this topic</a
+      >.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

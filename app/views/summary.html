@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent
+%} {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" })
+}} {% endblock %} {% block content %}
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Name</dt>
+    <dd class="govuk-summary-list__value">{{data['full-name']}}</dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href=""
+        >Change<span class="govuk-visually-hidden"> name</span></a
+      >
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">National Insurance Number</dt>
+    <dd class="govuk-summary-list__value">{{data['nino']}}</dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#"
+        >Change<span class="govuk-visually-hidden"> NINO</span></a
+      >
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Date of Birth</dt>
+    <dd class="govuk-summary-list__value">
+      {{data["DOB-day"]}}/{{data["DOB-month"]}}/{{data["DOB-year"]}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#"
+        >Change<span class="govuk-visually-hidden"> Date of Birth</span></a
+      >
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Address</dt>
+    <dd class="govuk-summary-list__value">
+      {{data["addressLine1"]}}<br />{{data["addressLine2"]}}<br />{{data["addressTown"]}}<br />{{data["addressPostcode"]}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#"
+        >Change<span class="govuk-visually-hidden"> Address</span></a
+      >
+    </dd>
+  </div>
+</dl>
+{% endblock %}

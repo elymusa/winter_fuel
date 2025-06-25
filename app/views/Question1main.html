@@ -1,0 +1,256 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent
+%} {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" })
+}} {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Winter Fuel Application</h1>
+
+    <form class="form" action="/summary" method="post">
+      <p>
+
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+        
+                  What is your full name?
+       
+              </h1>
+              <br>
+              <input class="govuk-input" id="full-name" name="full-name" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+        
+                  What is your National Insurance Number?
+       
+              </h1>
+              <br>
+              <input class="govuk-input" id="nino" name="nino" type="text">
+            </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="DOB">
+       
+            <h1 class="govuk-label-wrapper">
+                What is your date of birth?
+              </h1>
+    <br>
+            <div id="DOB-hint" class="govuk-hint">
+              For example, 27 03 1959
+            </div>
+            <div class="govuk-date-input" id="DOB">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="DOB-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="DOB-day" name="DOB-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="DOB-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="DOB-month" name="DOB-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="DOB-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="DOB-year" name="DOB-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          
+            <h1 class="govuk-label-wrapper">
+                What is your address?
+              </h1>
+              <br>
+       
+    
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-line-1">
+                    Address line 1
+                  </label>
+                  <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-line-2">
+                    Address line 2 (optional)
+                  </label>
+                  <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-town">
+                    Town or city
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-country">
+                    Country
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="address-country" name="addressCountry" type="text">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-postcode">
+                    Postcode
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
+                </div>
+              </fieldset>
+          <br>
+          <!-- <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+            
+              <h1 class="govuk-label-wrapper">
+                  Do you live with a partner?
+                </h1>
+                <br>
+         
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="partner" name="partner" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="partner">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="partner" name="partner" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="partner">
+                    No
+                  </label>
+
+              
+              </div>
+            </fieldset>
+            <br>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+              
+                <h1 class="govuk-label-wrapper">
+                    What is their date of birth?
+                  </h1>
+                  <br>
+           
+                  <div id="DOB-hint" class="govuk-hint">
+                    For example, 27 03 1959
+                  </div>
+                  <div class="govuk-date-input" id="DOBpartner">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="DOBpartner-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="DOBpartner-day" name="DOBpartner-day" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="DOBpartner-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="DOBpartner-month" name="DOBpartner-month" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="DOBpartner-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="DOBpartner-year" name="DOBpartner-year" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              
+              <h1 class="govuk-label-wrapper">
+                  Do you live in a care home?
+                </h1>
+                <br>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="care-homeMain" name="care-homeMain" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="care-homeMain">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="care-home-2Main" name="care-homeMain" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="care-home-2MMain">
+                    No
+                  </label>
+              
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+            
+              <h1 class="govuk-label-wrapper">
+                  Do you receive Pension Credit, Universal Credit or income-related ESA?
+                </h1>
+                <br>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="care-homeMain" name="care-homeMain" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="care-homeMain">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="care-home-2Main" name="care-homeMain" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="care-home-2Main">
+                    No
+                  </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="care-home-3Main" name="care-home3Main" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="care-home-3Main">
+                      N/A
+                    </label>
+                  </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+            
+              <h1 class="govuk-label-wrapper">
+                  Do you earn over £35,000 of taxable (gross) income per year? 
+                </h1>
+                <br>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="wageMain" name="wageMain" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="wageMain">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="wage-2Main" name="wageMain" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="wage-2Main">
+                    No
+                  </label>
+              
+              </div> -->
+            <!-- //</fieldset> -->
+          </div>
+      </p>
+
+      {{ govukButton({ text: "Continue" }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

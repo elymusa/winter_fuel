@@ -9,14 +9,17 @@ href: "#" }, { text: "Subsection" } ] }) }} {% endblock %} {% block content %}
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
 
-    <p>Use this service to:</p>
+    <p>
+      The Winter Fuel Payment is an annual payment to help you with heating
+      costs during the colder months. You must have reached State Pension age.
+      Your Winter Fuel Payment will be recovered through the tax system if your
+      taxable income is over £35,000.
+    </p>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Quickly check to see if you are eligible for winter fuel payments</li>
-    </ul>
+    <p>To apply please click start.</p>
 
-    {{ govukButton({ text: "Start now", href: "/Question1", isStartButton: true
-    }) }}
+    {{ govukButton({ text: "Start now", href: "/Question1main", isStartButton:
+    true }) }}
 
     <h2 class="govuk-heading-m">Before you start</h2>
 
@@ -47,7 +50,7 @@ href: "#" }, { text: "Subsection" } ] }) }} {% endblock %} {% block content %}
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
-            <a href="/introMain"> Apply for Winter Fuel Payment</a>
+            <a href="/index"> Check Eligibility for Winter Fuel Payment</a>
           </li>
           <li>
             <a href="https://www.gov.uk/pension-credit"> Pension Credit </a>

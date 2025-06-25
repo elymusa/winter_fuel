@@ -12,11 +12,10 @@ href: "#" }, { text: "Subsection" } ] }) }} {% endblock %} {% block content %}
     <p>Use this service to:</p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>Quickly check to see if you are eligible for winter fuel payments</li>
+      <li>Check to see if you are eligible for winter fuel payments</li>
     </ul>
 
-    {{ govukButton({ text: "Start now", href: "/Question1", isStartButton: true
-    }) }}
+    {{ govukButton({ text: "Start now", href: "", isStartButton: true }) }}
 
     <h2 class="govuk-heading-m">Before you start</h2>
 
@@ -47,15 +46,12 @@ href: "#" }, { text: "Subsection" } ] }) }} {% endblock %} {% block content %}
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
-            <a href="/introMain"> Apply for Winter Fuel Payment</a>
-          </li>
-          <li>
-            <a href="https://www.gov.uk/pension-credit"> Pension Credit </a>
-          </li>
-          <li>
             <a href="https://www.gov.uk/cold-weather-payment">
               Cold Weather Payment</a
             >
+          </li>
+          <li>
+            <a href="https://www.gov.uk/pension-credit"> Pension Credit </a>
           </li>
         </ul>
       </nav>
